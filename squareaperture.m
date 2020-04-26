@@ -43,7 +43,7 @@ title('far field square aperture diffraction pattern')
 % Plot the horizontal cross-section
 figure(4) 
 x=linspace(1,5000,5000);
-y=i1(2500,:); % Take the middle row of the unscaled intensity
+y=I1(2500,:); % Take the middle row of the unscaled intensity
 plot(x,y,'linewidth',2) % Plot the intensity of the middle row of pixels
 xlim([2450 2550]) % Set x-axis limit to maximize data readability 
 xlabel('Length [Pixels]')
@@ -53,7 +53,7 @@ title('Horizontal Cross-Section')
 % Plot the vertical cross-section
 figure(5)
 x=linspace(1,5000,5000); 
-y=i1(:,2500); % Take the middle column of the unscaled intensity
+y=I1(:,2500); % Take the middle column of the unscaled intensity
 plot(x,y,'linewidth',2) % Plot the intensity of the middle column of pixels
 xlim([2450 2550]) % Set x-axis limit to maximize data readability 
 xlabel('Width [Pixels]')
