@@ -32,31 +32,26 @@ axis([0 apl 0 apl]) % Set axes limits to size of aperture field
 f1=(real(fft2(ap))); % The real component of the Fourier Transform
 f2=fftshift(f1); % Shift the zero frequency to the center
 I1=f2.^2; %square the real part of fourier transform to get the Intensity
-I2=I1.^(0.2); %the scaled intensity
+I2=I1.^(0.1); %the scaled intensity
 %plot the diffraction pattern
 figure(2)
 imagesc(I2) %plot image of the full far field diffraction pattern
+caxis([0.7 8])
 colormap gray % Set the color of the diffraction plot
 xlabel('Length [Pixels]')
 ylabel('Intensity [Arb. units]')
 title('far field triangle aperture diffraction pattern')
+colorbar;
 
-% Plot the horizontal cross-section
-figure(4) 
-x=linspace(1,5000,5000);
-y=I1(2500,:); % Take the middle row of the unscaled intensity
-plot(x,y,'linewidth',2) % Plot the intensity of the middle row of pixels
-xlim([2450 2550]) % Set x-axis limit to maximize data readability 
+figure(3)%center field
+I2c=I2((2500-125):(2500+125),(2500-125):(2500+125));
+imagesc(I2c)
+caxis([1 18])
+colormap gray
 xlabel('Length [Pixels]')
 ylabel('Intensity [Arb. units]')
-title('Horizontal Cross-Section')
-% Plot the vertical cross-section
-figure(5)
-x=linspace(1,5000,5000); 
-y=I1(:,2500); % Take the middle column of the unscaled intensity
-plot(x,y,'linewidth',2) % Plot the intensity of the middle column of pixels
-xlim([2450 2550]) % Set x-axis limit to maximize data readability 
-xlabel('Width [Pixels]')
-ylabel('Intensity [Arb. units]')
-title('Vertical Cross-Section')
+title('center field triangle aperture diffraction pattern')
+colorbar;
+
+
     
