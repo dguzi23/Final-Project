@@ -38,6 +38,7 @@ colormap gray % Set the color of the diffraction plot
 xlabel('Length [Pixels]')
 ylabel('Intensity [Arb. units]')
 title('far field single-slit aperture diffraction pattern')
+colorbar;
 
 figure(3)%center field
 I2c=I2((2500-125):(2500+125),(2500-125):(2500+125));
