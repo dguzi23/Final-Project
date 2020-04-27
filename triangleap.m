@@ -36,7 +36,7 @@ I2=I1.^(0.1); %the scaled intensity
 %plot the diffraction pattern
 figure(2)
 imagesc(I2) %plot image of the full far field diffraction pattern
-caxis([0.7 8])
+caxis([0.1 14])
 colormap gray % Set the color of the diffraction plot
 xlabel('Length [Pixels]')
 ylabel('Intensity [Arb. units]')
@@ -44,14 +44,15 @@ title('far field triangle aperture diffraction pattern')
 colorbar;
 
 figure(3)%center field
-I2c=I2((2500-125):(2500+125),(2500-125):(2500+125));
+I2c=I2((2500-750):(2500+750),(2500-750):(2500+750));
 imagesc(I2c)
-caxis([1 18])
+caxis([1 47])
 colormap gray
 xlabel('Length [Pixels]')
 ylabel('Intensity [Arb. units]')
 title('center field triangle aperture diffraction pattern')
 colorbar;
+
 
 
     
