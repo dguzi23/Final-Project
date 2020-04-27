@@ -39,6 +39,15 @@ xlabel('Length [Pixels]')
 ylabel('Intensity [Arb. units]')
 title('far field square aperture diffraction pattern')
 
+figure(3)%center field
+I2c=I2((2500-125):(2500+125),(2500-125):(2500+125));
+imagesc(I2c)
+caxis([5 9])
+colormap gray
+xlabel('Length [Pixels]')
+ylabel('Intensity [Arb. units]')
+title('center field square aperture diffraction pattern')
+
 
 % Plot the horizontal cross-section
 figure(4) 
