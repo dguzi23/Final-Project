@@ -53,6 +53,18 @@ ylabel('Intensity [Arb. units]')
 title('center field triangle aperture diffraction pattern')
 colorbar;
 
+% Plot the cross-section along the triangle diagonal
+figure(4)
+for ijk=1:251
+    y(ijk)=I2((2500-125+ijk),round((2500-125+(1.*ijk))));
+end
+x=linspace(1,251,251);
+%Take the scaled intensity along the diagonal that is perpendicular of the hypotenuse
+plot(x,y,'linewidth',2) %Plot the intensity of the middle row o
+xlim([0 250]) % Set x-axis limit to maximize data readability 
+xlabel('Length [Pixels]')
+ylabel('Intensity [Arb. units]')
+title('Cross-Section perpendicular to the hypotenuse')
 
 
     
